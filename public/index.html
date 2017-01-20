@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>CSS/HTML Workshop with Drivy</title>
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styleDrivy.css" />
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+            <title> My Drivy Workshop</title>
   </head>
   <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
-    </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
-    </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
+  
+    <div class="navbar navbar-fixed-top">
+   <div class="navbar-header">  
+   <img src="drivy.jpg"/>
+   </div>
+   </div>
+
+
+  <div class="container"> 
+    <h1> Rent the car of your neighbour </h1>
+    </br> 
+    <div class="row">
+     <div id="car"> 
+    <fieldset>
+    <legend class="infos"> Car Informations </legend>
+      
+          <div class="span3"> <label> Car Model </label> <input class="model" type="text" placeholder="Car model"/></div>
+          <div class="span3"> <label>Price per day</label> <input class="price-by-day" type="number" placeholder="Price by day"/></div>
+          <div class="span3"> <label> Price by km </label><input class="price-by-km" type="number" placeholder="Price by km"/></div>
+       </div>
+       </fieldset>
+    </div>  
+
+
+
+
+       <div class="row">
+
+       <div id="rental"> 
+       <fieldset>
+       <legend class="infos"> Rental Informations </legend>
+          <div class="span3"> Begin date <input class="begin" type="date" placeholder="Rental begin date"/></div>
+
+
+
+
+          <div class="span3"> End date <input class="end" type="date" placeholder="Rental end date"/>  </div>
+          <div class="span3"> Distance <input class="distance" type="number" placeholder="Distance in km"/> </div>
+          </br></br>
+          Please, Check the box if you want deductible option <input class="option" type="checkbox" placeholder="Deductible option"/>
+         </fieldset>
+      </div>
+      <button id="compute" class="myButton"> <i class="icon-search icon-white"></i> Calculate the price </button>
+
+      </div>
+  </div>
+
+    <div id="actors">
+    	<fieldset> <legend class="infos"> Your rental details </legend>
+
+    </div>  
     <script id="template" type="x-tmpl-mustache">
       {{#actors}}
         <div class="actor">
@@ -26,8 +68,13 @@
         </div>
       {{/actors}}
     </script>
+   </div>
+    <footer>
+           <div class="text-left"> &copy; 2017 Drivy - All Rights Reserved </div>
+    </footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
     <script src="drivy.js"></script>
     <script src="index.js"></script>
+  
   </body>
 </html>
